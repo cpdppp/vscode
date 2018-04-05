@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>showdata</h3>
+	{volist name="data" id="vo"}
+	<ul>
+		<li>{$vo.name}</li>
+		<li>{$vo.email}</li>
+		<li>{$vo.mobile}</li>
+		<li>{$vo.address}</li>
+		<li>{if condition="$vo.status==1"}
+			启用
+			{else}未启用
+			{/if}
+		</li>
+	</ul>
+	{/volist}
+	{$data->render()}
+</body>
+</html>
