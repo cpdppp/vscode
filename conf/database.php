@@ -6,11 +6,11 @@ return
         // 服务器地址
                 'hostname'        => '192.168.33.10',
         // 数据库名
-                'database'        => 'o2o',
+                'database'        => 'myblog',
         // 数据库用户名
                 'username'        => 'root',
         // 数据库密码
                 'password'        => 'root',
-        // 数据库表前缀
-                'prefix'          => 'o2o_'
+        //自动写入时间戳
+                'auto_timestamp' => true
 ];

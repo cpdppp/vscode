@@ -32,9 +32,13 @@ class Index extends Controller
 	{
 		$this->redirect('index/welcome',302);
 	}
-	public function _empty()
+	public function feedback()
 	{
-		return 'empty method';
+		return $this->fetch('feedback-list');
+	}
+	public function myblog()
+	{
+		$this->redirect('index/index/index');
 	}
 	public function req($name='world')
 	{

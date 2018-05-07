@@ -1,0 +1,173 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>帝国cms 首页或者列表无图，不使用默认图片的方法</title>
+<meta name="keywords" content="帝国cms,默认图片" />
+<meta name="description" content="帝国cms 首页或者列表无图，不使用默认图片的方法" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="__CSS__/public.css" rel="stylesheet">
+<link href="__CSS__/index.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="/skin/2018/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<script>
+window.onload = function ()
+{
+	var oH2 = document.getElementsByTagName("h2")[0];
+	var oUl = document.getElementsByTagName("ul")[0];
+	oH2.onclick = function ()
+	{
+		var style = oUl.style;
+		style.display = style.display == "block" ? "none" : "block";
+		oH2.className = style.display == "block" ? "open" : ""
+	}
+}
+</script>
+{include file="public/header"}
+<article>
+  <div class="leftbox">
+    <div class="infos">
+      <div class="newsview">
+        <h2 class="intitle">您现在的位置是：<a href="/">首页</a>&nbsp;>&nbsp;<a href="/jstt/">学无止境</a>&nbsp;>&nbsp;<a href="/jstt/css3/">CSS3|Html5</a></h2>
+        <h3 class="news_title">帝国cms 首页或者列表无图，不使用默认图片的方法</h3>
+        <div class="news_author"><span class="au01"><a href='mailto:dancesmiling@qq.com'>杨青</a></span><span class="au02">2018-03-26</span><span class="au03">共<b><script src=/e/public/ViewClick/?classid=38&id=812&addclick=1></script></b>人围观</span></div>
+        <div class="tags"><a href="/e/tags/?tagname=%B5%DB%B9%FAcms&tempid=13" target="_blank">帝国cms</a> &nbsp; <a href="/e/tags/?tagname=%C4%AC%C8%CF%CD%BC%C6%AC&tempid=13" target="_blank">默认图片</a></div>
+        <div class="news_about"><strong>简介</strong>帝国cms列表页图文展示，或者首页图文展示，如果使用全图和文字，编辑起来比较麻烦，因为每一篇文章，你都得花时间去配图，所以，可有使用以下方法来实现。<br />
+ <br />
+</div>
+        <div class="news_infos">
+         <p>帝国cms列表页图文展示，或者首页图文展示，如果使用全图和文字，编辑起来比较麻烦，因为每一篇文章，你都得花时间去配图，所以，可有使用以下方法来实现。<br />
+&nbsp;<br />
+列表内容模板添加以下代码：<br />
+<br />
+<img alt="" src="/d/file/jstt/css3/2018-03-26/1947ff2e6fe896f6feef0cecf5d53725.png" />一定要勾选&ldquo;使用程序代码&rdquo;<br />
+<br />
+替换对象代码：&#39;.$titlepic.&#39;<br />
+<br />
+$titlepic=&#39;&lt;span class=&quot;blogpic&quot;&gt;&lt;a href=&quot;&#091;!--titleurl--]&quot; title=&quot;&#091;!--oldtitle--]&quot;&gt;&lt;img src=&quot;&#091;!--titlepic--]&quot; alt=&quot;&#091;!--oldtitle--]&quot; /&gt;&lt;/a&gt;&lt;/span&gt;&#39;<br />
+<br />
+<strong>列表内容模板，首页可用标签调用实现，办法同理</strong><br />
+&nbsp;</p>
+
+<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span>$titlepic=&#39;&#39;;<br />
+if($r[titlepic])<br />
+{<br />
+$titlepic=&#39;&lt;span class=&quot;blogpic&quot;&gt;&lt;a href=&quot;&#091;!--titleurl--]&quot; title=&quot;&#091;!--oldtitle--]&quot;&gt;&lt;img src=&quot;&#091;!--titlepic--]&quot; alt=&quot;&#091;!--oldtitle--]&quot; /&gt;&lt;/a&gt;&lt;/span&gt;&#39;;<br />
+}<br />
+$listtemp=&#39;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h3 class=&quot;blogtitle&quot;&gt;&lt;a href=&quot;&#091;!--titleurl--]&quot; target=&quot;_blank&quot; &gt;&#091;!--title--]&lt;/a&gt;&lt;/h3&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;bloginfo&quot;&gt;&#39;.$titlepic.&#39;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;&#091;!--smalltext--]...&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;autor&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;lm f_l&quot;&gt;&lt;a href=&quot;&#091;!--this.classlink--]&quot; title=&quot;&#091;!--this.classname--]&quot; target=&quot;_blank&quot; &nbsp;class=&quot;classname&quot;&gt;&#091;!--this.classname--]&lt;/a&gt;&lt;/span&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;dtime f_l&quot;&gt;&#091;!--newstime--]&lt;/span&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;viewnum f_l&quot;&gt;浏览（&lt;a href=&quot;/&quot;&gt;&#091;!--onclick--]&lt;/a&gt;）&lt;/span&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;f_r&quot;&gt;&lt;a href=&quot;&#091;!--titleurl--]&quot; class=&quot;more&quot;&gt;阅读原文&gt;&gt;&lt;/a&gt;&lt;/span&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;<br />
+&#39;;<span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span></div>
+        </div>
+      </div>
+      <div class="share">分享：</div>
+    </div>
+    <div class="nextinfo">
+      <p>上一篇：<a href='/jstt/css3/2018-03-25/811.html'>别让这些闹心的套路，毁了你的网页设计</a></p>
+      <p>下一篇：<a href='/jstt/css3/'>返回列表</a></a></p>
+    </div>
+    <div class="otherlink">
+      <h2>相关文章</h2>
+      <ul>
+   <li><a href="/jstt/css3/2018-03-24/810.html" title="帝国cms自动设置标题图片选用文章第一张图片">帝国cms自动设置标题图片选用文章第一张图片</a></li><li><a href="/jstt/web/2018-03-20/809.html" title="帝国cms关键词和tags标签自动同步方法">帝国cms关键词和tags标签自动同步方法</a></li><li><a href="/news/life/2018-03-04/801.html" title="帝国cms7.5更新完毕">帝国cms7.5更新完毕</a></li><li><a href="/jstt/web/2015-07-03/749.html" title="帝国cms首页、自定义页面如何实现分页">帝国cms首页、自定义页面如何实现分页</a></li><li><a href="/jstt/bj/2014-10-18/731.html" title="帝国cms常用标签调用方法总结（不得不收藏哦）">帝国cms常用标签调用方法总结（不得不收藏哦）</a></li><li><a href="/jstt/bj/2013-08-06/570.html" title="帝国cms怎样修改列表分页函数">帝国cms怎样修改列表分页函数</a></li>      </ul>
+    </div>
+    <div class="news_pl">
+      <h2>文章评论</h2>
+      <ul>
+<div class="gbko">
+<!--高速版-->
+<div id="SOHUCS" sid="812" ></div>
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cyt6UkrdY',
+conf: 'prod_37667ae67efaadf448cac07713d3165a'
+});
+</script>
+</div>
+      </ul>
+    </div>
+  </div>
+  <div class="rightbox">
+    <div class="search">
+      <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+        <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
+        <input name="show" value="title" type="hidden">
+        <input name="tempid" value="1" type="hidden">
+        <input name="tbname" value="news" type="hidden">
+        <input name="Submit" class="input_submit" value="搜索" type="submit">
+      </form>
+    </div>
+    <div class="paihang">
+      <h2 class="ab_title"><a href="/">本栏推荐</a></h2>
+      <ul>
+        <li><b><a href="/jstt/css3/2018-03-20/808.html" target="_blank">十条设计原则教你学会如何设计网页布局!30...</a></b>
+          <p>网页常见的布局有很多种,单列布局,多列布局.其中单列布局是国外很多网站比较常用的.咱们很多站长以及门户...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2018-03-14/806.html" target="_blank">用js+css3来写一个手机栏目导航30...</a></b>
+          <p>有些站长说想做一个手机适应的网站,但是导航太难了,如果要使用框架的话,代码非常多,冗余.再用dreamwear打...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2018-03-14/805.html" target="_blank">6条网页设计配色原则,让你秒变配色高手30...</a></b>
+          <p>网页设计好不好看,颜色是毋庸置疑要排首位的,所以关于颜色的搭配技巧以及原则,对于每一个要学习web前端设...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2017-08-08/787.html" target="_blank">三步实现滚动条触动css动画效果30...</a></b>
+          <p>现在很多网站都有这种效果，我就整理了一下，分享出来。利用滚动条来实现动画效果，ScrollReveal.js 用于...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2014-12-09/734.html" target="_blank">使用CSS3制作文字、图片倒影30...</a></b>
+          <p>CSS3制作文字、图片倒影需要涉及到使用CSS3.0新属性之box-reflect。box-reflect属性目前仅在Chrome、Safa...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2014-06-28/698.html" target="_blank">有创意的鼠标悬停效果集锦30...</a></b>
+          <p>分享一些用css3技术，三维、伪元素实现一些有创意的悬停效果</p>
+        </li>
+      </ul>
+      <div class="ad"><img src="/skin/2018/images/ad300x100.jpg"></div>
+    </div>
+    <div class="paihang">
+      <h2 class="ab_title"><a href="/">点击排行</a></h2>
+      <ul>
+               <li><b><a href="/jstt/css3/2014-12-09/734.html" target="_blank">使用CSS3制作文字、图片倒影30...</a></b>
+          <p>CSS3制作文字、图片倒影需要涉及到使用CSS3.0新属性之box-reflect。box-reflect属性目前仅在Chrome、Safa...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2013-07-16/380.html" target="_blank">CSS3 Animation 实现对象从右到左渐变的css3动画效果30...</a></b>
+          <p>CSS3中的Animation与HTML5中的Canvas绘制动画不同。Animation只应用在页面上已存在的DOM元素上，而且他跟...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2013-08-01/535.html" target="_blank">css3背景(一)背景图片、颜色渐变、多重背景图30...</a></b>
+          <p>background-image：设置或检索对象的背景图像background-repeat：设置或检索对象的背景图像如何铺排填充b...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2014-05-12/664.html" target="_blank">关于响应式Web设计技巧以及入门30...</a></b>
+          <p>html5和css3流行至今，我在做响应式的网站一直是在“尝试”的阶段。并没有深入的去研究和学习，浅显的理解...</p>
+        </li>
+        <li><b><a href="/jstt/css3/2014-11-18/733.html" target="_blank">【分享】css3侧边栏导航不同方向划出效果30...</a></b>
+          <p>设定一组侧边栏导航菜单，然后可以从任何一边滑出。有两种实现方式，一种固定菜单，一种从左右两侧推出</p>
+        </li>
+        <li><b><a href="/jstt/css3/2013-07-15/379.html" target="_blank">CSS3 伪类选择器 nth-child() 的用法30...</a></b>
+          <p>伪类选择器 nth-child() 在IE6-8和FF3.0-浏览器不支持,CSS3中nth-of-type(n)（比如nth-of-type(1)）这个特...</p>
+        </li>
+      </ul>
+      <div class="ad"><img src="/skin/2018/images/ad01.jpg"></div>
+    </div>
+    <div class="weixin">
+      <h2 class="ab_title">官方微信</h2>
+      <ul>
+        <img src="/skin/2018/images/wx.jpg">
+      </ul>
+    </div>
+  </div>
+</article>
+{include file="public/footer"}
+<script src="/e/public/onclick/?enews=donews&classid=38&id=812"></script></body>
+</html>

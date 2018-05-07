@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>留言板 - 一个站在web前端设计之路的女技术员个人博客网站</title>
+<meta name="keywords" content="留言板" />
+<meta name="description" content="留言板" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="__CSS__/public.css" rel="stylesheet">
+<link href="__CSS__/index.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="/skin/2018/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<script>
+window.onload = function ()
+{
+	var oH2 = document.getElementsByTagName("h2")[0];
+	var oUl = document.getElementsByTagName("ul")[0];
+	oH2.onclick = function ()
+	{
+		var style = oUl.style;
+		style.display = style.display == "block" ? "none" : "block";
+		oH2.className = style.display == "block" ? "open" : ""
+	}
+}
+</script>
+{include file="public/header"}
+<article>
+  <div class="container">
+      <div class="about">
+<div class="gbko">
+<!--高速版-->
+<div id="SOHUCS" sid="[!--id--]" ></div>
+<script charset="gb2312" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cyt6UkrdY',
+conf: 'prod_37667ae67efaadf448cac07713d3165a'
+});
+</script>
+</div>
+</div>
+    </div>
+  </div>
+</article>
+{include file="public/footer"}
+</body>
+</html>
+

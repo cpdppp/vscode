@@ -1,11 +1,13 @@
 <?php
 return 
 [
-	'view_replace_str'       => 
-	[
-		'__ADMIN__'=>'/admin',
-		'__LIB__'=>'/lib'
-	],
-	'default_module'         => 'admin',
-	'app_trace'              => true
+
+	'default_module'         => 'index',
+	'app_trace'              => false,
+	    'paginate'               => [
+        'type'      => 'bootstrap',
+        'var_page'  => 'page',
+        'list_rows' => 15,
+        'newstyle'  => true
+    ]
 ];
